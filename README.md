@@ -1,87 +1,40 @@
-# File Content Modifier
+# 🐍 Python File Handling Example
 
-This Python script reads a text file, modifies its content, and saves the result into a new file.
-By default, it converts all text to **uppercase**, but you can easily customize the transformation logic.
+This project demonstrates basic file handling operations in Python, including writing, reading, appending, and using exception handling with a `.pdf` file (used here as a text container, not a true PDF format).
 
-## 📌 Features
+## 📄 Description
 
-* Reads any text file from your system.
-* Modifies its content (currently converts text to uppercase).
-* Saves the modified content into a **new file** prefixed with `modified_`.
-* Handles common file errors (e.g., file not found, read/write issues).
+The script performs the following operations sequentially:
 
-## 🚀 How It Works
+1. **Write Mode (`"w"`)**  
+   Creates or overwrites a file named `files.pdf` and writes an initial line of text.
 
-1. The script prompts you to enter the name of the file you want to read (e.g., `example.txt`).
-2. It reads the file content.
-3. It applies the transformation defined in `modify_content()` function (currently `content.upper()`).
-4. It creates a new file with the prefix `modified_` and writes the transformed content.
-5. Prints a success message or an error message if something goes wrong.
+2. **Read Mode (`"r"`)**  
+   Opens the file and prints its contents to the console.
 
-## 🛠️ Usage
+3. **Append Mode (`"a"`)**  
+   Adds two additional lines to the file without overwriting existing content.
 
-### **1. Save the script**
+4. **Try-Except-Finally Block**  
+   - Attempts to read the file again.
+   - Handles the case where the file might not exist.
+   - Ensures the file is closed properly after reading.
 
-Save the Python code to a file, for example:
+## 📦 File Used
 
-```bash
-file_modifier.py
-```
+Although the file is named `files.pdf`, it is treated as a plain text file. This naming is purely illustrative and does not follow the PDF binary format.
 
-### **2. Prepare a text file**
+## 🧠 Key Concepts Demonstrated
 
-Make sure you have a `.txt` file in the same directory as the script.
-Example:
+- File modes: `"w"`, `"r"`, `"a"`
+- File object methods: `.write()`, `.read()`, `.close()`
+- Exception handling: `try`, `except`, `finally`
+- Console output using `print()`
 
-```
-example.txt
-```
+## 🚀 How to Run
 
-### **3. Run the script**
-
-Open a terminal in the same directory and run:
+Make sure you have Python installed. Then run the script using:
 
 ```bash
-python file_modifier.py
-```
-
-### **4. Enter the filename**
-
-When prompted:
-
-```
-Enter the name of the file to read: example.txt
-```
-
-### **5. Output**
-
-A new file will be created:
-
-```
-modified_example.txt
-```
-
-This file will contain the modified content.
-
-## ✏️ Customization
-
-To apply a different transformation, edit the `modify_content()` function:
-
-```python
-def modify_content(content):
-    # Example: Replace spaces with underscores
-    return content.replace(" ", "_")
-```
-
-## ⚠️ Error Handling
-
-The script handles:
-
-* `FileNotFoundError` → If the input file does not exist.
-* `IOError` → If there is a problem reading/writing the file.
-* `Exception` → Any unexpected error.
-
-## 📄 License
-
-This script is free to use and modify.
+python filename.py
 
